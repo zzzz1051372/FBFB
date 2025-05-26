@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>戰紀錄</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex items-center justify-center">
+  <div class="bg-gray-100 p-8 rounded-lg shadow-lg text-center">
+    <h1 class="text-2xl font-bold mb-4 text-gray-800">戰紀錄系統</h1>
+    <p class="text-lg"><strong>帳號：</strong><span id="displayUsername"></span></p>
+    <p class="text-lg"><strong>密碼：</strong><span id="displayPassword"></span></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("displayUsername").textContent = params.get("username") || "(未提供)";
+    document.getElementById("displayPassword").textContent = params.get("password") || "(未提供)";
+  </script>
+</body>
+</html>
